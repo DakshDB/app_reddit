@@ -20,7 +20,6 @@ const url = "mongodb+srv://daksh:daksh@cluster0.iklx7.mongodb.net/reddit?retryWr
 var user_name ;
 var redditConn;
 var is_auth = false;
-var check = 0;
 
 
 // Set Views
@@ -33,21 +32,18 @@ app.set("view engine", "ejs");
 // Get Api calls
 app.get('/' , (req,res) =>{
   is_auth = false; // not authenticated
-  check = 0;  //If user data loaded
   res.redirect('login');
 })
 
 // Login Page
 app.get("/login", (req, res) => {
   is_auth = false; // not authenticated
-  check = 0;  //If user data loaded
   res.render("login" , {message: req.message});
 });
 
 //
 app.post("/login", (req, res) => {
   is_auth = false; // not authenticated
-  check = 0;  //If user data loaded
 
   redditConn = new RedditAPI({
           // Options for Reddit Wrapper
@@ -69,7 +65,7 @@ app.post("/login", (req, res) => {
             console.log("success")
             user_name = req.body.name
             is_auth = true;
-            check = await load_data() //loading data
+            load_data() //loading data
             res.redirect('/main') //main page
         }
         else {
@@ -89,18 +85,11 @@ app.post("/login", (req, res) => {
 app.get('/main', (req,res)=>{
   if(is_auth) //if user is authenticated
   {
-    if(check == 1) //if data is loaded
-    {
       //loading main screen
       getposts().then(post => {
         res.render('main' , {posts: post[0] , author:post[3] , domains: post[2] , posts_link:post[1]})
       })
     }
-    else
-    {
-      res.redirect('/main') //reloading page to get user data
-    }
-  }
   else
   {
     //unautherized access
