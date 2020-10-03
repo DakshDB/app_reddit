@@ -29,10 +29,11 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 
+
 // Get Api calls
 app.get('/' , (req,res) =>{
   is_auth = false; // not authenticated
-  res.redirect('login')
+  res.redirect('login');
 })
 
 // Login Page
@@ -218,6 +219,10 @@ async function update_auth(dbo , link_len , author)
   return 1
 }
 
+// Handle 404 - Keep this as a last route
+app.use(function(req, res, next) {
+    res.redirect('login')
+});
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Listening at 3000 `)
