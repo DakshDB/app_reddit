@@ -1,0 +1,31 @@
+{
+  "name": "app_reddit",
+  "version": "1.0.0",
+  "description": "App to fetch Reddit posts and analysis",
+  "main": "index.js",
+   "engines": {
+    "node": "12.16.3",
+    "npm": "6.14.4"
+  },
+
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "ejs": "3.1.5",
+    "http-server": "^0.12.3",
+    "jsdom": "^16.4.0",
+    "mongodb": "^3.6.2",
+    "oauth": "^0.9.15",
+    "reddit": "^1.2.0",
+    "reddit-wrapper-v2": "^1.1.6",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "request-promise-native": "^1.0.9",
+    "url": "^0.11.0"
+  }
+}

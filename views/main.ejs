@@ -1,0 +1,140 @@
+<!--doctype html-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--title-icon--------->
+
+    <link rel="stylesheet"  href="css/main.css" />
+    <!--using FontAwesome---------------->
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--main------------------------>
+    <section id="main">
+      <!--navigation-------------------------------->
+      <nav>
+        <!--logo--->
+        <a href="#" class="logo"><img src="img/reddit1.jpg"></a>
+        <!--menu--------->
+        <div class="toggle"></div>
+        <ul class="menu">
+          <li class="active"><a href="#main">Home</a></li>
+          <li ><a href="#post_card">User's Post</a></li>
+          <li><a href="#post_link">Posts with Links</a></li>
+          <li><a href="#author">Top Authors</a></li>
+          <li><a href="#Mostliked">Most shared domains</a></li>
+          <li><a href="#contact-btn">Contact</a></li>
+          <form action="/login" , method="GET">
+            <input class="btn_sign" type="submit" value="Log out">
+          </form>
+
+        </ul>
+      </nav>
+      <!--name--------------------------->
+      <div class="name">
+        <!--hello------->
+        <p><h1>Heyy !!</h1></p>
+        <!--name--->
+        <h1>I am your <font color="#17d1ac"> Reddit app</font> </h1>
+        <!--details--------------->
+        <p class="details">I provide you the insight about the posts shared with links</p>
+      </div>
+
+    </section>
+
+<!-- Users post section -->
+    <section id=post_card>
+      <div class="about-text">
+      <h1>Recent Posts</h1>
+    </div>
+<!-- Adding data of users post -->
+      <div >
+          <% for(let i = 0; i < posts.length; i++) { %>
+              <div class="card">
+                  <hr>
+                  <h2><%= posts[i].title %></h2>
+                  <h5>&#9864;  Author: <%= posts[i].author %>      &#9864;  SubReddit: <%= posts[i].subreddit_name_prefixed %></h5>
+                  <h4><%= posts[i].selftext %></h4>
+                  <hr>
+              </div>
+          <% } %>
+        </div>
+      </section>
+
+<!-- posts with links section -->
+    <section id="post_link">
+      <div class="about-text">
+      <h1>Posts with links</h1>
+    </div>
+
+<!-- adding posts with links -->
+      <div >
+          <% for(let i = 0; i < posts_link.length; i++) { %>
+              <div class="card">
+                  <hr>
+                  <h2><%= posts_link[i].title %></h2>
+                  <h5>&#9864;  Author: <%= posts_link[i].author %>      &#9864;  SubReddit: <%= posts_link[i].subreddit_name_prefixed %></h5>
+                  <h4><%= posts_link[i].selftext %></h4>
+                  <hr>
+              </div>
+          <% } %>
+        </div>
+    </section>
+
+
+<!-- Author sharing links section -->
+    <section id="author">
+      <div class="about-text">
+        <h1>Authors who shared most links</h1>
+      </div>
+<!-- Adding author data -->
+      <div class="tab">
+          <% for(let i = 0; i < author.length; i++) { %>
+                <div>
+                  <h3><%= author[i].id %> &#9864; <%= author[i].count %></h3>
+                </div>
+          <% } %>
+        </div>
+    </section>
+
+<!-- Adding most shared domain  -->
+    <section id="Mostliked">
+      <div class="about-text">
+        <h1>
+          Most Shared Domains
+        </h1>
+      </div>
+      <!-- Adding domain data -->
+          <div class="tab">
+            <% for(let i = 0; i < domains.length; i++) { %>
+                <div>
+                    <h3><%= domains[i].id %> &#9864; <%= domains[i].count %></h3>
+                </div>
+            <% } %>
+          </div>
+    </section>
+
+
+
+    <!--Contact-btn------------------>
+    <section id="contact-btn">
+      <!--heading-------------->
+      <br>
+      <h1 class="c-b-heading">Want to collaborate for some exciting projects??</h1>
+      <!--btn-------->
+      <h4>daksh bhatia</h4>
+<!-- Link for email  -->
+      <a  class=”link” href="mailto:daksh2210@gmail.com" target="_blank">
+      <button>Contact Me
+      </button></a>
+    </section>
+
+
+    <script type="text/javascript" src="js/JQuery3.3.1.js"></script>
+  </body>
+</html>
