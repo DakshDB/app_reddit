@@ -1,5 +1,6 @@
 <!--doctype html-->
 <html>
+  <title>Home Page</title>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
@@ -14,6 +15,14 @@
     ></script>
   </head>
   <body>
+    <script type="text/javascript">
+    setTimeout(function () {
+    if(window.location.hash != '#r') {
+        window.location.hash = 'r';
+        window.location.reload(1);
+    }
+}, 15000);  // After 5 secs
+    </script>
     <!--main------------------------>
     <section id="main">
       <!--navigation-------------------------------->
@@ -38,11 +47,11 @@
       <!--name--------------------------->
       <div class="name">
         <!--hello------->
-        <p><h1>Heyy !!</h1></p>
+        <p><h1>Hey !!</h1></p>
         <!--name--->
         <h1>I am your <font color="#17d1ac"> Reddit app</font> </h1>
         <!--details--------------->
-        <p class="details">I provide you the insight about the posts shared with links</p>
+        <h3 >I provide you the insight about the posts shared with links</h3>
       </div>
 
     </section>
@@ -60,7 +69,6 @@
                   <h2><%= posts[i].title %></h2>
                   <h5>&#9864;  Author: <%= posts[i].author %>      &#9864;  SubReddit: <%= posts[i].subreddit_name_prefixed %></h5>
                   <h4><%= posts[i].selftext %></h4>
-                  <hr>
               </div>
           <% } %>
         </div>
@@ -80,7 +88,6 @@
                   <h2><%= posts_link[i].title %></h2>
                   <h5>&#9864;  Author: <%= posts_link[i].author %>      &#9864;  SubReddit: <%= posts_link[i].subreddit_name_prefixed %></h5>
                   <h4><%= posts_link[i].selftext %></h4>
-                  <hr>
               </div>
           <% } %>
         </div>

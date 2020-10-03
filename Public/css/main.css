@@ -121,7 +121,7 @@ h2 {
 }
 
 hr {
-  border-top: 1px solid red;
+  border-top: 5px solid black;
 }
 
 
@@ -156,7 +156,7 @@ hr {
 }
 
 .card{
-  background-color: #00ffff10;
+  background-color: #0011ff07;
 }
 .about-text {
   font-family: calibri;

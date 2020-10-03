@@ -33,12 +33,14 @@ app.set("view engine", "ejs");
 // Get Api calls
 app.get('/' , (req,res) =>{
   is_auth = false; // not authenticated
+  check = 0;  //If user data loaded
   res.redirect('login');
 })
 
 // Login Page
 app.get("/login", (req, res) => {
   is_auth = false; // not authenticated
+  check = 0;  //If user data loaded
   res.render("login" , {message: req.message});
 });
 
@@ -87,7 +89,7 @@ app.post("/login", (req, res) => {
 app.get('/main', (req,res)=>{
   if(is_auth) //if user is authenticated
   {
-    if(check = 1) //if data is loaded
+    if(check == 1) //if data is loaded
     {
       //loading main screen
       getposts().then(post => {
@@ -149,7 +151,6 @@ async function load_data()
             else {
               domain = null
             }
-
             jsonArr = {
             username: user_name,
             selftext: data.data.children[i].data.selftext,
