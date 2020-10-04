@@ -58,7 +58,7 @@ app.post("/login", (req, res) => {
 
 
 app.get('/main', (req,res)=>{
-  var url = new URL(req.headers.host + '/' + req.url);
+  var url = new URL(req.headers.host  + req.url);
   var c = url.searchParams.get("code");
   query = {state: 'Random' , code: c}
 
