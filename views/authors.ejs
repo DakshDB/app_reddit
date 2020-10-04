@@ -1,0 +1,71 @@
+<!--doctype html-->
+<html>
+  <title>Top Authors</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--title-icon--------->
+
+    <link rel="stylesheet"  href="css/main.css" />
+    <!--using FontAwesome---------------->
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--main------------------------>
+
+      <!--navigation-------------------------------->
+      <nav>
+        <!--logo--->
+        <a href="#" class="logo"><img src="img/reddit1.jpg"></a>
+        <!--menu--------->
+        <div class="toggle"></div>
+        <ul class="menu">
+          <li ><a href="/main">Home</a></li>
+          <li ><a href="/user_posts">User's Post</a></li>
+          <li><a href="/posts_links">Posts with Links</a></li>
+          <li class="active"><a href="/authors">Top Authors</a></li>
+          <li><a href="/domains">Most shared domains</a></li>
+          <li><a href="/main#contact-btn">Contact</a></li>
+          <li><a href="/login">Log Out</a></li>
+
+
+        </ul>
+      </nav>
+
+      <!-- Author sharing links section -->
+          <section id="author">
+            <div class="about-text">
+              <h1>Authors who shared most links</h1>
+            </div>
+      <!-- Adding author data -->
+            <div class="tab">
+                <% for(let i = 0; i < author.length; i++) { %>
+                      <div>
+                        <h3><%= author[i].id %> &#9864; <%= author[i].count %></h3>
+                      </div>
+                <% } %>
+              </div>
+          </section>
+
+
+                          <!--Contact-btn------------------>
+                          <section id="contact-btn">
+                            <!--heading-------------->
+                            <br>
+                            <h1 class="c-b-heading">Want to collaborate for some exciting projects??</h1>
+                            <!--btn-------->
+                            <h4>daksh bhatia</h4>
+                      <!-- Link for email  -->
+                            <a  class=”link” href="mailto:daksh2210@gmail.com" target="_blank">
+                            <button>Contact Me
+                            </button></a>
+                          </section>
+
+
+    <script type="text/javascript" src="js/JQuery3.3.1.js"></script>
+  </body>
+</html>

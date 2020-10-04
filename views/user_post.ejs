@@ -1,0 +1,62 @@
+<!--doctype html-->
+<html>
+  <title>Posts</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--title-icon--------->
+
+    <link rel="stylesheet"  href="css/main.css" />
+    <!--using FontAwesome---------------->
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--main------------------------>
+
+      <!--navigation-------------------------------->
+      <nav>
+        <!--logo--->
+        <a href="#" class="logo"><img src="img/reddit1.jpg"></a>
+        <!--menu--------->
+        <div class="toggle"></div>
+        <ul class="menu">
+          <li ><a href="/main">Home</a></li>
+          <li class="active"><a href="/user_posts">User's Post</a></li>
+          <li><a href="/posts_links">Posts with Links</a></li>
+          <li><a href="/authors">Top Authors</a></li>
+          <li><a href="/domains">Most shared domains</a></li>
+          <li><a href="/main#contact-btn">Contact</a></li>
+          <li><a href="/login">Log Out</a></li>
+
+
+
+        </ul>
+      </nav>
+
+<!-- Users post section -->
+    <section id=post_card>
+      <div class="about-text">
+      <h1>Recent Posts</h1>
+    </div>
+<!-- Adding data of users post -->
+      <div >
+          <% for(let i = 0; i < posts.length; i++) { %>
+              <div class="card">
+                  <hr>
+                  <h2><%= posts[i].title %></h2>
+                  <h5>&#9864;  Author: <%= posts[i].author %>      &#9864;  SubReddit: <%= posts[i].subreddit_name_prefixed %></h5>
+                  <h4><%= posts[i].selftext %></h4>
+              </div>
+          <% } %>
+        </div>
+      </section>
+
+
+
+    <script type="text/javascript" src="js/JQuery3.3.1.js"></script>
+  </body>
+</html>
