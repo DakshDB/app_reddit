@@ -50,15 +50,18 @@ nav {
   color: #6c707c;
   font-size: 12px;
 }
+
 .lang {
   color: #292929;
 }
+
 .logo {
   font-size: 25px;
   font-weight: bold;
   color: #292929;
   font-family: Poppins;
 }
+
 .toggle {
   display: none;
 }
@@ -67,17 +70,18 @@ nav {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
+
 .active a,
 .menu li a:hover {
   background-color: #292929;
-  color: #fff !important;
+  color: #fff ;
   font-weight: bold;
   transition: all ease 0.4s;
 }
 
 .btn_sign{
   background-color: #292929;
-  color: #fff !important;
+  color: #fff ;
   font-weight: bold;
   transition: all ease 0.4s;
 }

@@ -1,5 +1,4 @@
 const express = require('express')
-// var RedditAPI = require('reddit-wrapper-v2');
 const path = require('path')
 var urls = require('url');
 var bodyParser = require('body-parser');
@@ -238,13 +237,9 @@ async function load_data()
                x1 = x.upsertedCount
                //if document is not already in database and have link update domains and author count
             if(x1!=0 && domain!=null)
-            {
               update(dbo,domain)
-            }
             if(x1!=0 && link!=null)
-            {
               update_auth(dbo,link.length, data.data.children[i].data.author)
-            }
           }
       });
   })
