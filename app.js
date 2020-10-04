@@ -22,7 +22,7 @@ const url = "mongodb+srv://daksh:daksh@cluster0.iklx7.mongodb.net/reddit?retryWr
 var reddit = new RedditApi({
     app_id: 'RdLM98XRxdKD2g',
     app_secret: 'gxhzXN0LZgvd39-0OH-A63f2AXo',
-    redirect_uri: 'http://localhost:3000/main'
+    redirect_uri: 'https://app-reddit.herokuapp.com/main'
 });
 
 var user_name ;
