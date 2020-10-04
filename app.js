@@ -38,20 +38,21 @@ app.set("view engine", "ejs");
 
 // Get Api calls
 app.get('/' , (req,res) =>{
-  is_auth = false; // not authenticated
   res.redirect('login');
 })
 
 // Login Page
 app.get("/login", (req, res) => {
+  res.render("login" , {message: req.message});
+});
+
+app.get("/logout", (req, res) => {
   is_auth = false; // not authenticated
   res.render("login" , {message: req.message});
 });
 
 //
 app.post("/login", (req, res) => {
-
-  is_auth = false; // not authenticated
   res.redirect(reddit.oAuthUrl('Random', 'read'));
 });
 
