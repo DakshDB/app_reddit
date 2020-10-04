@@ -1,6 +1,4 @@
 #  App Reddit
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1ac554483fac462797ffa5a8b9adf2fa?style=flat-square)]()
-[![Build Status](https://api.travis-ci.org/fossasia/badgeyay.svg?branch=development&style=flat-square)]()
 
 
 The App is like a smaller version of Reddit app which can perform following functions:
@@ -18,7 +16,7 @@ Link to the application - [App Reddit](https://app-reddit.herokuapp.com/)
 - Framework
     - Nodejs
     - Expressjs
-    
+
 - Database
      - MongoDB
 
@@ -49,7 +47,7 @@ git clone https://github.com/DakshDB/app_reddit
 npm install
 ```
 5. **Run** the server on local host.
-```sh 
+```sh
 npm start
 ```
 # Project Structure
